@@ -1,0 +1,48 @@
+###
+### A complete description of a Prefect Deployment for flow 'Create a Report for Google Trends'
+###
+name: google-trends-gh-docker
+description: null
+version: 01ba78c265bb0e9aee0079dd4d0766cc
+# The work queue that will handle this deployment's runs
+work_queue_name: test
+tags: []
+parameters: {}
+schedule: null
+infra_overrides: {}
+infrastructure:
+  type: process
+  env: {}
+  labels: {}
+  name: null
+  command: null
+  stream_output: true
+  block_type_slug: process
+  _block_type_slug: process
+
+###
+### DO NOT EDIT BELOW THIS LINE
+###
+flow_name: Create a Report for Google Trends
+manifest_path: null
+storage: null
+path: D:\Navin\prefect\prefect_docker
+entrypoint: src\main.py:create_pytrends_report
+parameter_openapi_schema:
+  title: Parameters
+  type: object
+  properties:
+    keyword:
+      title: keyword
+      default: COVID
+      type: string
+    start_date:
+      title: start_date
+      default: '2020-01-01'
+      type: string
+    num_countries:
+      title: num_countries
+      default: 10
+      type: integer
+  required: null
+  definitions: null
